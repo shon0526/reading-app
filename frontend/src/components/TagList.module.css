@@ -1,0 +1,14 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tag {
+  padding: 1px 8px;
+  border-radius: 4px;
+  background: #eee;
+  font-size: 0.8rem;
+}
