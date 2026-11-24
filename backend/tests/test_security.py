@@ -1,4 +1,4 @@
-"""DB 層のセキュリティテスト（RLS・権限・制約）。設計書 3 章・4 章に対応。"""
+"""DB 層のセキュリティテスト（RLS・権限・制約）。"""
 import json
 
 import pytest
@@ -9,7 +9,7 @@ from tests.conftest import USER_A, USER_B
 
 
 def as_user(conn, user_id):
-    """設計書 3.3 と同じ手順でリクエスト用の DB セッションを作る。"""
+    """authenticated ロールに切り替え、ユーザーID を設定する。"""
     conn.execute(text("set local role authenticated"))
     conn.execute(
         text("select set_config('request.jwt.claims', :c, true)"),
